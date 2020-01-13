@@ -50,7 +50,7 @@ namespace StarTrek
             string[] allowedVulcanFemaleNameChars2 = { "P", "K", "Q" };
             string[] allowedVulcanFemaleNameChars3 = { "a", "e", "i", "o", "u", "y" };
             string[] allowedVulcanFemaleNameChars4 = { "r", "j", "'p", "k", "l" };
-            for(int i = 0; i < 42069; i++)
+            while(vulcanFemaleNames.Count != 90)
             {
                 int firstChars = generator.Next(0, allowedVulcanFemaleNameChars.Length);
                 int secondChars = generator.Next(0, allowedVulcanFemaleNameChars2.Length);
@@ -60,9 +60,12 @@ namespace StarTrek
                 string vulcanFemaleName = allowedVulcanFemaleNameChars[firstChars] + 
                     allowedVulcanFemaleNameChars2[secondChars] +
                     allowedVulcanFemaleNameChars3[thirdChars] + 
-                    allowedVulcanFemaleNameChars4[fourthChars];    
-                
-                vulcanFemaleNames.Add(vulcanFemaleName);
+                    allowedVulcanFemaleNameChars4[fourthChars];
+
+                if(!vulcanFemaleNames.Contains(vulcanFemaleName))
+                {
+                    vulcanFemaleNames.Add(vulcanFemaleName);
+                }
             }
         }
         static void Main()
@@ -79,22 +82,33 @@ namespace StarTrek
                 int.TryParse(input, out int names);
                 for(int i = 0; i < names; i++)
                 {
+                    Console.WriteLine("Indtast et vulcan navn:");
                     input = Console.ReadLine();
                     if(vulcanMaleNames.Contains(input))
                     {
-                        Console.WriteLine($"'{input}' er et lovligt vulcan male navn");
+                        Console.WriteLine($"'{input}' er et lovligt vulcan male navn\n");
                         inputVulcanMaleNames.Add(input);
                     }
                     else if(vulcanFemaleNames.Contains(input))
                     {
-                        Console.WriteLine($"'{input}' er et lovligt vulcan female navn");
+                        Console.WriteLine($"'{input}' er et lovligt vulcan female navn\n");
+                        inputVulcanFemaleNames.Add(input);
                     }
                     else
                     {
-                        Console.WriteLine($"'{input}' er ikke et lovligt vulcan male eller female navn");
+                        Console.WriteLine($"'{input}' er ikke et lovligt vulcan male eller female navn\n");
                     }
                 }
-                
+                Console.WriteLine("Du har indtastet følgende vulcan male navne: ");
+                for(int i = 0; i < inputVulcanMaleNames.Count; i++)
+                {
+                    Console.WriteLine(inputVulcanMaleNames[i]);
+                }
+                Console.WriteLine("\nDu har indtastet følgende vulcan female navne: ");
+                for(int i = 0; i < inputVulcanFemaleNames.Count; i++)
+                {
+                    Console.WriteLine(inputVulcanFemaleNames[i]);
+                }
                 Console.ReadLine();
                 Console.Clear();
             }
