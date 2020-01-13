@@ -26,9 +26,15 @@ namespace StarTrek
                 int fourthChars = generator.Next(0, allowedVulcanMaleNameChars4.Length);
                 int fifthChars = generator.Next(0, allowedVulcanMaleNameChars5.Length);
 
-                string vulcanMaleName = allowedVulcanMaleNameChars[firstChars] + allowedVulcanMaleNameChars2[secondChars] +
-                    allowedVulcanMaleNameChars3[thirdChars] + allowedVulcanMaleNameChars4[fourthChars] + allowedVulcanMaleNameChars5[fifthChars];
-                string moreVulcanMaleNames = allowedVulcanMaleNameChars[firstChars] + allowedVulcanMaleNameChars2[secondChars] + allowedVulcanMaleNameChars5[fifthChars];
+                string vulcanMaleName = allowedVulcanMaleNameChars[firstChars] + 
+                    allowedVulcanMaleNameChars2[secondChars] +
+                    allowedVulcanMaleNameChars3[thirdChars] + 
+                    allowedVulcanMaleNameChars4[fourthChars] + 
+                    allowedVulcanMaleNameChars5[fifthChars];
+                string moreVulcanMaleNames = allowedVulcanMaleNameChars[firstChars] + 
+                    allowedVulcanMaleNameChars2[secondChars] + 
+                    allowedVulcanMaleNameChars5[fifthChars];
+
                 vulcanMaleNames.Add(vulcanMaleName);
                 vulcanMaleNames.Add(moreVulcanMaleNames);
             }
@@ -48,8 +54,11 @@ namespace StarTrek
                 int fourthChars = generator.Next(0, allowedVulcanFemaleNameChars4.Length);
 
 
-                string vulcanFemaleName = allowedVulcanFemaleNameChars[firstChars] + allowedVulcanFemaleNameChars2[secondChars] +
-                    allowedVulcanFemaleNameChars3[thirdChars] + allowedVulcanFemaleNameChars4[fourthChars];             
+                string vulcanFemaleName = allowedVulcanFemaleNameChars[firstChars] + 
+                    allowedVulcanFemaleNameChars2[secondChars] +
+                    allowedVulcanFemaleNameChars3[thirdChars] + 
+                    allowedVulcanFemaleNameChars4[fourthChars];    
+                
                 vulcanFemaleNames.Add(vulcanFemaleName);
             }
         }
