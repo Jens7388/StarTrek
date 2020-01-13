@@ -18,8 +18,7 @@ namespace StarTrek
             string[] allowedVulcanMaleNameChars4 = { "a", "e", "i", "o", "u", "y" };
             string[] allowedVulcanMaleNameChars5 = { "q", "p", "k", "ck", "l" };
             for(int i = 0; i < 42069; i++)
-            {
-               
+            {              
                 int firstChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
                 int secondChars = generator.Next(0, allowedVulcanMaleNameChars2.Length);
                 int thirdChars = generator.Next(0, allowedVulcanMaleNameChars3.Length);
@@ -47,12 +46,10 @@ namespace StarTrek
             string[] allowedVulcanFemaleNameChars4 = { "r", "j", "'p", "k", "l" };
             for(int i = 0; i < 42069; i++)
             {
-
                 int firstChars = generator.Next(0, allowedVulcanFemaleNameChars.Length);
                 int secondChars = generator.Next(0, allowedVulcanFemaleNameChars2.Length);
                 int thirdChars = generator.Next(0, allowedVulcanFemaleNameChars3.Length);
                 int fourthChars = generator.Next(0, allowedVulcanFemaleNameChars4.Length);
-
 
                 string vulcanFemaleName = allowedVulcanFemaleNameChars[firstChars] + 
                     allowedVulcanFemaleNameChars2[secondChars] +
