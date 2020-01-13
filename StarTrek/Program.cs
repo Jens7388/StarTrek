@@ -11,17 +11,33 @@ namespace StarTrek
             {
                 List<string> vulcanMaleNames = new List<string>();
                 List<string> vulcanFemaleNames = new List<string>();
-                string[] allowedVulcanMaleNameCharacters = { "S,Sp,Sk,St,T", "a,e,i,o,u,y", "r,t,p,d,f,j,k,l,v,b,n,m", "a,e,i,o,u,y",  "q,p,k,ck,l" };
-                Console.Write("Indtast et navn: ");
-                string input = Console.ReadLine();
-                if(input == String.Concat(allowedVulcanMaleNameCharacters[0].Split(","), allowedVulcanMaleNameCharacters[1].Split(","), allowedVulcanMaleNameCharacters[2].Split(","), allowedVulcanMaleNameCharacters[3].Split(","), allowedVulcanMaleNameCharacters[4].Split(",")))
+                string[] allowedVulcanMaleNameChars = { "S", "Sp", "Sk", "St", "T" };
+                string[] allowedVulcanMaleNameChars2 = { "a", "e", "i", "o", "u", "y" };
+                string[] allowedVulcanMaleNameChars3 = { "r", "t", "p", "d", "f", "j", "k", "l", "v", "b", "n", "m" };
+                string[] allowedVulcanMaleNameChars4 = { "a", "e", "i", "o", "u", "y" };
+                string[] allowedVulcanMaleNameChars5 = { "q", "p", "k", "ck", "l" };
+                for(int i = 0; i < 42069; i++)
+                {
+                    Random generator = new Random();
+                    int firstChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
+                    int secondChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
+                    int thirdChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
+                    int fourthChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
+                    int fifthChars = generator.Next(0, allowedVulcanMaleNameChars.Length);
+
+                    string vulcanMaleName = allowedVulcanMaleNameChars[firstChars] + allowedVulcanMaleNameChars2[secondChars] +
+                        allowedVulcanMaleNameChars3[thirdChars] + allowedVulcanMaleNameChars4[fourthChars] + allowedVulcanMaleNameChars5[fifthChars];
+                    vulcanMaleNames.Add(vulcanMaleName);
+                }
+                /*Console.Write("Indtast et navn: ");
+                if(input)
                 {
                     Console.WriteLine("Dette er et lovligt vulcan male navn");
                 }
                 else
                 {
                     Console.WriteLine("Dette er ikke et lovligt vulcan male navn");
-                }
+                }*/
                 Console.ReadLine();
                 Console.Clear();
             }
